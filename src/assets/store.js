@@ -9,11 +9,11 @@ let baseURL = import.meta.env.BASE_URL
 
 export async function loadData() {
   const [natures, questions, natureToPokemon, natureDescription, strings] = await Promise.all([
-    fetch(`${baseURL}lang/${lang}/natures-${lang}.json`).then(res => res.json()),
-    fetch(`${baseURL}lang/${lang}/questions-${lang}.json`).then(res => res.json()),
-    fetch(`${baseURL}lang/${lang}/naturetopokemon-${lang}.json`).then(res => res.json()),
-    fetch(`${baseURL}lang/${lang}/naturedescription-${lang}.json`).then(res => res.json()),
-    fetch(`${baseURL}lang/${lang}/strings-${lang}.json`).then(res => res.json()),
+    fetch(`${baseURL}lang/${lang}/natures-en.json`).then(res => res.json()),
+    fetch(`${baseURL}lang/${lang}/questions-en.json`).then(res => res.json()),
+    fetch(`${baseURL}lang/${lang}/naturetopokemon-en.json`).then(res => res.json()),
+    fetch(`${baseURL}lang/${lang}/naturedescription-en.json`).then(res => res.json()),
+    fetch(`${baseURL}lang/${lang}/strings-en.json`).then(res => res.json()),
   ]);
 
   return { natures, questions, natureToPokemon, natureDescription, strings };
