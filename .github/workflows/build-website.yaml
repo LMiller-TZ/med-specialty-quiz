@@ -39,7 +39,7 @@ jobs:
       - name: Build the Vite project
         run: npm run build
         env:
-          VITE_BASE: pmd-quiz-online
+          VITE_BASE: med-specialty-quiz
 
       - name: Prepare Pages Deployment
         uses: actions/configure-pages@v5  # set up GitHub Pages deployment
