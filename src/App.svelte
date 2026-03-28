@@ -127,7 +127,7 @@
           <div
             class="flex flex-col select-none justify-center items-center text-center h-[10vh] w-screen bg-black/50 hover:bg-black/60 transition-all duration-300 z-10"
             on:click="{() => {
-              window.open('https://twitter.com/rionisguild', '_blank');
+              window.open('https://www.instagram.com/lmiller_96/', '_blank');
             }}"
             on:keydown>
             <p class="text-sm lg:text-2xl text-white/75 underline">
