@@ -39,7 +39,7 @@ export const radialChartConfig = {
   plugins: {
     title: {
       display: true,
-      text: "Natures",
+      text: "Specialties",
       color: 'rgba(245, 245, 245, 1)',
       font:
       {
