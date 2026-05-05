@@ -76,7 +76,7 @@
           {strings["ResultMessage"]}
         </h1>
         <!-- Row of images -->
-        /*
+        <!--
         <div
           class="flex flex-row flex-wrap justify-center items-center w-[90%] gap-4 pointer-events-none select-none pb-4">
           {#each imagesSrc as source}
@@ -86,7 +86,7 @@
               class="w-[25%] rendering-pixelated img-box" />
           {/each}
         </div>
-        */
+        -->
         <button
           on:click="{() => {
             doTransition = true;
