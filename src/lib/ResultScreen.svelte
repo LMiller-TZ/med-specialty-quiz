@@ -82,7 +82,7 @@
             <img
               src="{source}"
               alt=""
-              class="w-[25%] rendering-pixelated img-box" />
+              class="w-[25%] rendering-pixelated img-box" /> test
           {/each}
         </div>
         <button
