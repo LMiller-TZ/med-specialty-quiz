@@ -37,7 +37,7 @@
       datasets: [
         {
           label: $store.strings['radarChartLabel'],
-          lineTension: 0.1,
+          lineTension: 0.5,
           data: values,
           backgroundColor: [
             "rgba(255, 99, 132, 0.5)",
