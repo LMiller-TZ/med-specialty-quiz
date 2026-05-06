@@ -5,7 +5,7 @@
 
   let chart = null;
   let myChart = null;
-  let minDataValue = 0.05;
+  let minDataValue = 0.1;
 
   store.subscribe((value) => {
     if (myChart) updateData();
