@@ -45,7 +45,7 @@
           borderColor: [
             "rgba(255, 99, 132, 1)",
           ],
-          borderWidth: 1,
+          borderWidth: 0.1,
         },
       ],
     };
