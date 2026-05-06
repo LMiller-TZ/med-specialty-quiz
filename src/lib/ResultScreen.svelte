@@ -7,6 +7,7 @@
   $: strings = $store.strings;
   let imagesSrc = [];
   let winningNature = "";
+  let topThreeNatures = [];
 
   store.subscribe((value) => {
     calculateImages();
@@ -22,6 +23,9 @@
   let orderedNatures = Object.keys(store.weightedPoints).sort(
     (a, b) => store.weightedPoints[b] - store.weightedPoints[a]
   );
+
+  // NEW
+  topThreeNatures = orderedNatures.slice(0, 3);
 
   for (let nature of orderedNatures) {
     if (store.weightedPoints[nature] >= max) {
@@ -93,7 +97,14 @@
       <div
         class="bg-black/50 flex flex-col flex-wrap justify-start lg:justify-center items-center pb-2">
         <RadialChart class="w-[75%] m-0 p-0" />
-
+        <h1 class="text-white text-box select-none p-0 mb-4 w-[80%] lg:w-[90%]">
+          <p>Top 3 Stats:</p>
+          <ul>
+            {#each topThreeNatures as nature}
+              <li>{nature}</li>
+            {/each}
+          </ul>
+        </h1>
         <button
         on:click="{() => {
           doTransition = true;
