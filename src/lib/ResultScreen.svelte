@@ -27,7 +27,7 @@
   // NEW
   topThreeNatures = orderedNatures.slice(0, 3).map(nature => ({
     name: nature,
-    score: parseInt(store.weightedPoints[nature] * 100)
+    score: store.weightedPoints[nature]
   }));
 
   for (let nature of orderedNatures) {
