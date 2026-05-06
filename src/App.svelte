@@ -15,7 +15,7 @@
   let isSpanish = getLanguage() === "es";
 
   onMount(() => {
-    musicBg.volume = 0.1;
+    musicBg.volume = 0.05;
     setTimeout(() => {
       window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
     }, 100);
