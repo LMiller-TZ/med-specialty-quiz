@@ -25,7 +25,10 @@
   );
 
   // NEW
-  topThreeNatures = orderedNatures.slice(0, 3);
+  topThreeNatures = orderedNatures.slice(0, 3).map(nature => ({
+    name: nature,
+    score: store.weightedPoints[nature]
+  }));
 
   for (let nature of orderedNatures) {
     if (store.weightedPoints[nature] >= max) {
@@ -98,10 +101,14 @@
         class="bg-black/50 flex flex-col flex-wrap justify-start lg:justify-center items-center pb-2">
         <RadialChart class="w-[75%] m-0 p-0" />
         <h1 class="text-white text-box select-none p-0 mb-4 w-[80%] lg:w-[90%]">
-          <p>Top 3 Stats:</p>
-          <ul>
+          <p class="mb-2">Top 3:</p>
+        
+          <ul class="space-y-1">
             {#each topThreeNatures as nature}
-              <li>{nature}</li>
+              <li>
+                <span class="font-bold">{nature.name}</span>
+                <span class="opacity-80"> — {nature.score}</span>
+              </li>
             {/each}
           </ul>
         </h1>
