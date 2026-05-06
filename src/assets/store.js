@@ -95,7 +95,7 @@ export const radialChartConfig = {
       {
         display: true,
         color: 'rgba(245, 245, 245, 0.9)',
-        padding: isMobile ? 18 : 10,
+        padding: isMobile ? 10 : 10,
         font:
         {
           size: isMobile ? 9 : 11,
@@ -106,7 +106,6 @@ export const radialChartConfig = {
           const wrapMap = {
             "Cardiothoracic Surgery": ["Cardiothoracic", "Surgery"],
             "Emergency Medicine": ["Emergency", "Medicine"],
-            "Family Medicine": ["Family", "Medicine"],
             "Internal Medicine": ["Internal", "Medicine"],
             "Obstetrics and Gynecology": ["Obstetrics", "and", "Gynecology"],
             "Infectious Disease": ["Infectious", "Disease"],
