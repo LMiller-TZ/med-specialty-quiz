@@ -35,6 +35,8 @@ export function initStore(data) {
   store.maxPoints = getMaxPoints(point, store.questions);
 }
 
+const isMobile = typeof window !== "undefined" && window.innerWidth < 600;
+
 export const radialChartConfig = {
   plugins: {
     title: {
@@ -56,6 +58,12 @@ export const radialChartConfig = {
     },
   },
   responsive: true,
+  maintainAspectRatio: false,
+  layout: {
+    padding: isMobile
+      ? { top: 25, bottom: 30, left: 18, right: 18 }
+      : { top: 0, bottom: 0, left: 0, right: 0 },
+  },
   scale: {
     ticks: {
       display: false,
@@ -63,7 +71,6 @@ export const radialChartConfig = {
       max: 90,
     },
     afterTickToLabelConversion: function (scaleInstance) {
-      // overwrite the ticks and keep the first (never shown) and last
       var oldTicks = scaleInstance.ticks;
       scaleInstance.ticks = [oldTicks[0], oldTicks[oldTicks.length - 1]];
     }
@@ -88,10 +95,27 @@ export const radialChartConfig = {
       {
         display: true,
         color: 'rgba(245, 245, 245, 0.9)',
+        padding: isMobile ? 18 : 10,
         font:
         {
-          size: 11,
-        }
+          size: isMobile ? 9 : 11,
+        },
+        callback: function(label) {
+          if (!isMobile) return label;
+
+          const wrapMap = {
+            "Cardiothoracic Surgery": ["Cardiothoracic", "Surgery"],
+            "Emergency Medicine": ["Emergency", "Medicine"],
+            "Family Medicine": ["Family", "Medicine"],
+            "Internal Medicine": ["Internal", "Medicine"],
+            "Obstetrics and Gynecology": ["Obstetrics", "and", "Gynecology"],
+            "Infectious Disease": ["Infectious", "Disease"],
+            "Trauma Surgery": ["Trauma", "Surgery"],
+            "Palliative Care": ["Palliative", "Care"],
+          };
+
+          return wrapMap[label] || label;
+        },
       },
       suggestedMin: 0,
     },
@@ -110,4 +134,3 @@ export const radialChartConfig = {
     }
   }
 }
-
