@@ -107,7 +107,6 @@ export const radialChartConfig = {
             "Cardiothoracic Surgery": ["Cardiothoracic", "Surgery"],
             "Emergency Medicine": ["Emergency", "Medicine"],
             "Internal Medicine": ["Internal", "Medicine"],
-            "Obstetrics and Gynecology": ["Obstetrics", "and", "Gynecology"],
             "Infectious Disease": ["Infectious", "Disease"],
             "Trauma Surgery": ["Trauma", "Surgery"],
             "Palliative Care": ["Palliative", "Care"],
