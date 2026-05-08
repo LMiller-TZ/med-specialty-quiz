@@ -71,16 +71,13 @@
 {#if !startTransition}
 <section class="select-none z-50">
   <div
-    class="flex flex-col w-screen h-screen text-center justify-center items-center bg-black/[0.65]">
-    <h1 class="text-yellow-50 text-base sm:text-xl md:text-4xl pointer-events-none w-[75%] select-none">
-      Click to advance (don't scroll)
-    </h1>
-  </div>
-  <div
     class="flex flex-col w-screen h-screen text-center justify-center items-center bg-black/[0.65]"
     on:pointerdown="{() => onPointerDown()}"
     transition:fade
     on:outroend="{() => finish = true}">
+    <h1 class="text-yellow-50 text-base sm:text-xl md:text-4xl pointer-events-none w-[75%] select-none">
+      Click to advance (don't scroll)
+    </h1>
     {#key index}
     <h1 bind:this={text} class="text-yellow-50 text-base sm:text-xl md:text-4xl pointer-events-none w-[75%] select-none"
     transition:slide>
