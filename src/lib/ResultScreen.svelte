@@ -181,7 +181,9 @@
 .nature-popout {
   position: relative;
 
-  width: min(90vw, 420px);
+  width: min(82vw, 360px);
+  max-height: 75vh;
+  overflow-y: auto;
 
   padding: 22px 20px;
   padding-top: 42px;
