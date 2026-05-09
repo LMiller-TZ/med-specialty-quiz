@@ -109,6 +109,7 @@
         <RadialChart class="w-[75%] m-0 p-0" />
         <h1 class="text-white text-box select-none p-0 mb-4 w-[80%] lg:w-[90%]" style="margin-bottom:0px;margin-top:24px;">
           <p class="mb-2" style="margin-bottom:0px;">Top 3:</p>
+          <p class="mb-1" style="margin-bottom:0px;">(tap to read description)</p>
         
           <ul class="space-y-1">
             {#each topThreeNatures as nature}
