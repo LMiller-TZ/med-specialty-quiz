@@ -122,17 +122,35 @@
                 </span>
         
                 <span class="opacity-80"> — {nature.score}</span>
-        
-                <span
-                  class:nature-popout-visible={activeNature === nature.name}
-                  class="nature-popout"
-                >
-                  {natureDescriptions[nature.name]}
-                </span>
               </li>
             {/each}
           </ul>
         </h1>
+        
+        {#if activeNature}
+          <div
+            class="nature-overlay"
+            on:click={() => activeNature = null}
+          >
+            <div
+              class="nature-popout"
+              on:click|stopPropagation
+            >
+              <button
+                class="nature-close"
+                on:click={() => activeNature = null}
+              >
+                ✕
+              </button>
+        
+              <h2 class="nature-title">{activeNature}</h2>
+        
+              <p>
+                {natureDescriptions[activeNature]}
+              </p>
+            </div>
+          </div>
+        {/if}
         <button
         on:click="{() => {
           doTransition = true;
@@ -149,19 +167,25 @@
 {/if}
 
 <style>
-.nature-popout {
-  display: none;
-
+.nature-overlay {
   position: fixed;
-  z-index: 9999;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 9998;
 
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nature-popout {
+  position: relative;
 
   width: min(90vw, 420px);
 
-  padding: 18px 20px;
+  padding: 22px 20px;
+  padding-top: 42px;
+
   border-radius: 16px;
 
   background: rgba(0, 0, 0, 0.92);
@@ -170,20 +194,28 @@
   color: white;
   font-size: 0.95rem;
   line-height: 1.5;
-  font-weight: normal;
 
   box-shadow: 0 0 40px rgba(0,0,0,0.4);
 }
 
-/* Desktop hover */
-@media (hover: hover) and (pointer: fine) {
-  .nature-popout-trigger:hover ~ .nature-popout {
-    display: block;
-  }
+.nature-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+
+  border: none;
+  background: transparent;
+
+  color: white;
+  font-size: 1.2rem;
+
+  cursor: pointer;
+
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
 }
 
-/* Mobile click */
-.nature-popout-visible {
-  display: block;
+.nature-close:hover {
+  opacity: 1;
 }
 </style>
