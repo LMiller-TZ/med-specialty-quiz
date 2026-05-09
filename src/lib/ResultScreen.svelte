@@ -117,7 +117,7 @@
                 <span
                   class="nature-popout-trigger"
                   on:click={() => toggleNature(nature.name)}
-                >
+                style="text-decoration:underline;">
                   {nature.name}
                 </span>
         
