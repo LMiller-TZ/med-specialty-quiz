@@ -108,8 +108,8 @@
         class="bg-black/50 flex flex-col flex-wrap justify-start lg:justify-center items-center pb-2">
         <RadialChart class="w-[75%] m-0 p-0" />
         <h1 class="text-white text-box select-none p-0 mb-4 w-[80%] lg:w-[90%]" style="margin-bottom:0px;margin-top:24px;">
-          <p class="mb-2" style="margin-bottom:0px;">Top 3:</p>
-          <p class="mb-1" style="margin-bottom:0px;">(tap to read description)</p>
+          <p class="mb-2" style="margin-bottom:-15px;">Top 3:</p>
+          <p style="margin-bottom: 0px;font-size: 16px;">(tap to read description)</p>
         
           <ul class="space-y-1">
             {#each topThreeNatures as nature}
