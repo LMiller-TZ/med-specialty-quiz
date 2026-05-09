@@ -146,3 +146,38 @@
     <div class="fixed right-0 top-0 w-screen h-screen bg-black"></div>
   </section>
 {/if}
+
+<style>
+  .nature-popout-trigger {
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .nature-popout {
+    display: none;
+    position: absolute;
+    z-index: 50;
+    left: 0;
+    top: 100%;
+    margin-top: 6px;
+    width: 220px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    font-size: 0.85rem;
+    line-height: 1.3;
+    font-weight: normal;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .nature-popout-trigger:hover ~ .nature-popout {
+      display: block;
+    }
+  }
+
+  .nature-popout-visible {
+    display: block;
+  }
+</style>
