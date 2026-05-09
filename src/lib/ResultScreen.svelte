@@ -148,36 +148,41 @@
 {/if}
 
 <style>
-  .nature-popout-trigger {
-    cursor: pointer;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
+.nature-popout {
+  display: none;
 
-  .nature-popout {
-    display: none;
-    position: absolute;
-    z-index: 50;
-    left: 0;
-    top: 100%;
-    margin-top: 6px;
-    width: 220px;
-    padding: 10px 12px;
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.85);
-    color: white;
-    font-size: 0.85rem;
-    line-height: 1.3;
-    font-weight: normal;
-  }
+  position: fixed;
+  z-index: 9999;
 
-  @media (hover: hover) and (pointer: fine) {
-    .nature-popout-trigger:hover ~ .nature-popout {
-      display: block;
-    }
-  }
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 
-  .nature-popout-visible {
+  width: min(90vw, 420px);
+
+  padding: 18px 20px;
+  border-radius: 16px;
+
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(8px);
+
+  color: white;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: normal;
+
+  box-shadow: 0 0 40px rgba(0,0,0,0.4);
+}
+
+/* Desktop hover */
+@media (hover: hover) and (pointer: fine) {
+  .nature-popout-trigger:hover ~ .nature-popout {
     display: block;
   }
+}
+
+/* Mobile click */
+.nature-popout-visible {
+  display: block;
+}
 </style>
