@@ -3,6 +3,13 @@
   import { store } from "../assets/store.js";
   import { fade } from "svelte/transition";
   import { transition_out } from "svelte/internal";
+  import natureDescriptions from "../../public/lang/en/naturedescription-en.json";
+
+  let activeNature = null;
+
+  function toggleNature(name) {
+    activeNature = activeNature === name ? null : name;
+  }
 
   $: strings = $store.strings;
   let imagesSrc = [];
@@ -102,11 +109,25 @@
         <RadialChart class="w-[75%] m-0 p-0" />
         <h1 class="text-white text-box select-none p-0 mb-4 w-[80%] lg:w-[90%]" style="margin-bottom:0px;margin-top:24px;">
           <p class="mb-2" style="margin-bottom:0px;">Top 3:</p>
+        
           <ul class="space-y-1">
             {#each topThreeNatures as nature}
-              <li>
-                <span>{nature.name}</span>
+              <li class="relative">
+                <span
+                  class="nature-popout-trigger"
+                  on:click={() => toggleNature(nature.name)}
+                >
+                  {nature.name}
+                </span>
+        
                 <span class="opacity-80"> — {nature.score}</span>
+        
+                <span
+                  class:nature-popout-visible={activeNature === nature.name}
+                  class="nature-popout"
+                >
+                  {natureDescriptions[nature.name]}
+                </span>
               </li>
             {/each}
           </ul>
