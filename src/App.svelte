@@ -6,7 +6,7 @@
   import { isTouchEnabled, getLanguage } from "./assets/utils.js";
   import { transition_in } from "svelte/internal";
 
-  $store.numQuestions = 10;
+  $store.numQuestions = 20;
   let musicBg = null;
   let loaded = loadData();
   let isPlaying = false;
