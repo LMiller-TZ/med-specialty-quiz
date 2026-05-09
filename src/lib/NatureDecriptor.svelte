@@ -75,7 +75,7 @@
     on:pointerdown="{() => onPointerDown()}"
     transition:fade
     on:outroend="{() => finish = true}">
-    <h1 class="text-yellow-50 text-base sm:text-xl md:text-4xl pointer-events-none w-[75%] select-none" style="border-bottom: 2px solid white; padding-bottom: 5px;">
+    <h1 class="text-yellow-50 text-base sm:text-xl md:text-4xl pointer-events-none w-[75%] select-none" style="border-bottom: 2px solid white; margin-bottom: 18px;">
       Click to advance (don't scroll)
     </h1>
     {#key index}
