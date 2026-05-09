@@ -107,7 +107,7 @@
               {data.strings["NormalMode"]}
             </h1>
             <h1 class="text-2xl lg:text-4xl text-white/75">
-              {data.strings["10"]}
+              {data.strings["20"]}
             </h1>
           </div>
           <div
